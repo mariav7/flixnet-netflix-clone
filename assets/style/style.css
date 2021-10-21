@@ -1,0 +1,630 @@
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/*************** Navbar ***************/
+.topBar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  height: 70px;
+  box-sizing: border-box;
+  /* min-width: 1050px; */
+  min-width: 100%;
+  transition: background-color 200ms linear;
+}
+
+.topBar.scrolled {
+  background-color: #141414;
+  transition: background-color 200ms linear;
+}
+
+.logoContainer {
+  height: 50px;
+}
+
+.logoContainer img{
+  height: 100%;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+}
+
+.navLinks a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.navLinks a:hover {
+  color: #e6e6e6;
+}
+
+.rightItems i:hover {
+  color: #e6e6e6;
+  cursor: pointer;
+}
+
+.rightItems {
+  flex: 1;
+  text-align: right;
+}
+
+.rightItems i{
+  color: #fff;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.topBar .burgerMenu,
+.menuResponsive {
+  display: none;
+}
+
+/******* Sign in and Register pages *******/
+.signInContainer {
+  background-color: #efefee;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  background-color: #fff;
+  min-height: 300px;
+  max-height: 100%;
+  width: 450px;
+  box-shadow: rgba(0,0,0,0.1) 0 1px 2px;
+  padding: 20px 35px;
+  /* overflow-y: auto; */
+}
+
+.column form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+}
+
+.column form input[type="text"],
+.column form input[type="email"],
+.column form input[type="password"] {
+  font-size: 14px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #dedede;
+}
+
+.column form input[type="submit"] {
+  background-color: #4285f4;
+  color: #fff;
+  height: 36px;
+  width: 88px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.column .header {
+  padding: 20px 0;
+}
+
+.column .header h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+  padding-top: 16px;
+  color: #000;
+}
+
+.column .header span {
+  font-size: 14px;
+}
+
+.column .header img {
+  width: 100px;
+}
+
+.signInMessage {
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.errorMessage {
+  color: #f00;
+  font-size: 14px;
+  font-weight: 400;
+  /*text-align: center;*/
+}
+
+/************** dashboard.php **************/
+h3 {
+  color: #e5e5e5;
+}
+
+a h3:hover {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #0654ba;
+}
+
+.wrapper {
+  /* min-width: 1050px; */
+  min-width: 100%;
+  min-height: 100%;
+  background-color: #141414;
+}
+
+.previewImage,
+.previewVideo {
+  width: 100%;
+}
+
+.previewContainer {
+  position: relative;
+  display: flex;
+}
+
+.previewContainer.small {
+  width: 230px;
+  height: 129px;
+  margin-right: 4px;
+  display: inline-flex;
+}
+
+.previewContainer.small img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+}
+
+.previewOverlay .mainDetails h3 {
+  color: #fff;
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+.previewOverlay .mainDetails h4 {
+  color: #fff;
+  font-size: 20px;
+  /* margin: 15px 0; */
+  margin-top: 0;
+}
+
+.previewOverlay .mainDetails {
+  position: relative;
+  top: 35%;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainDetails button {
+  background-color: rgba(51,51,51,0.4);
+  color: #fff;
+  border: none;
+  min-width: 150px;
+  padding: 0 38px;
+  height: 50px;
+  max-height: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+button i {
+  color: inherit;
+}
+
+.mainDetails button:hover {
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.entities,
+.videos {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/* .scrollbars_none::-webkit-scrollbar {
+  display: none;
+} */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  -webkit-box: inset 0 0 6px rgba(0, 0, 0, 0);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+  -webkit-box: inset 0 0 0px rgba(0, 0, 0, 0);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #333;
+  height: 3px;
+}
+::-webkit-scrollbar-corner {
+  display: none;
+  height: 0px;
+  width: 0px;
+}
+
+.previewCategories {
+  padding: 0 50px;
+}
+
+.previewCategories h1 {
+  color: #e5e5e5;
+}
+
+/************** entity.php **************/
+.errorBanner {
+  color: #fff;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.season {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+}
+
+.episodeContainer {
+  display: inline-flex;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.episodeContainer .contents {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  position: relative;
+}
+
+.episodeContainer img {
+  width: 230px;
+  height: 129px;
+  object-fit: cover;
+}
+
+.episodeContainer .videoInfo h4,
+.episodeContainer .videoInfo span{
+  color: #fff;
+  width: 100%;
+  white-space: normal;
+}
+
+.episodeContainer .videoInfo {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.previewCategories.noScroll .category .entities {
+  white-space: normal;
+  text-align: center;
+}
+
+.seen {
+  color: #2ecc71;
+  font-size: 26px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+/************** watch.php **************/
+.watchContainer video {
+  width: 100%;
+}
+
+.videoControls {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.videoControls h1 {
+  color: #fff;
+}
+
+.videoControls button {
+  padding: 50px;
+  font-size: 50px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.upNext {
+  height: 100%;
+  justify-content: center;
+}
+
+.upNextContainer button {
+  padding: 0;
+}
+
+.upNextContainer h2,
+.upNextContainer h3 {
+  color: #fff;
+}
+
+.watchNav {
+  z-index: 2;
+}
+
+/*********** search.php ************/
+.textboxContainer {
+  padding: 100px 50px;
+}
+
+.searchInput {
+  height: 50px;
+  width: 600px;
+  border: 1px solid #dedede;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+/***********  user.php ************/
+.settingsContainer {
+  padding-top: 60px;
+  background-color: transparent;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.settingsContainer h2 {
+  color: #fff;
+  margin-top: 0;
+}
+
+.settingsContainer .formSection {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 20px;
+}
+
+.settingsContainer form input[type="text"],
+.settingsContainer form input[type="email"],
+.settingsContainer form input[type="password"] {
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+
+.settingsContainer form input[type="submit"] {
+  background-color: #dc1928;
+  width: 100px;
+  height: 40px;
+}
+
+.settingsContainer from input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+.alertSuccess,
+.alertError {
+  margin: 10px 0;
+}
+
+.alertError {
+  color: #dc1928;
+}
+
+.alertSuccess {
+  color: #2ecc71;
+}
+
+.formSection h3 {
+  padding: 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+/********* Responsiveness **********/
+@media screen and (max-width: 960px) {
+  .logoContainer {
+    height: 45px;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+/************ Navbar *************/
+  .logoContainer {
+    height: 40px;
+  }
+
+  .topBar .burgerMenu {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 24px 30px;
+  }
+
+  .topBar .navLinks,
+  .topBar .rightItems a:not(:last-child) {
+    display: none;
+  }
+
+  .menuResponsive {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+    height: auto;
+    box-sizing: border-box;
+    background-color: #141414;
+  }
+  
+  .menuResponsive li {
+    width: 100%;
+    list-style: none;
+    margin: 10px 0;
+  }
+
+  .menuResponsive a {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .menuResponsive a:hover {
+    color: #e6e6e6;
+  }
+  
+  .menuResponsive i:hover {
+    color: #e6e6e6;
+    cursor: pointer;
+  }
+  
+  .menuResponsive i{
+    color: #fff;
+    font-size: 16px;
+  }
+
+/*********** Search.php ***************/
+  .searchInput {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+/************* User.php ******************/
+  .settingsContainer form input[type="text"], .settingsContainer form input[type="email"], .settingsContainer form input[type="password"] {
+    width: 100%;
+  }
+
+/************* Entity.php *******************/
+  .previewOverlay .mainDetails {
+    margin-left: 30px;
+    position: absolute;
+  }
+
+  .previewOverlay .mainDetails h3 {
+    font-size: 25px;
+    margin: 5px 0;
+  }
+
+  .previewOverlay .mainDetails h4 {
+    margin-bottom: 5px;
+  }
+
+  .mainDetails button {
+    min-width: 90px;
+    padding: 0 15px;
+    height: 35px;
+    max-height: 45px;
+    font-size: 15px;
+  }
+
+  .previewContainer.small {
+    width: 216px;
+    height: 130px;
+    margin-right: 0;
+  }
+
+  .previewCategories {
+    padding: 0 35px;
+  }
+
+/************** Watch.php *****************/
+  .videoControls button {
+    padding: 35px;
+    font-size: 30px;
+  }
+
+  .upNext {
+    height: auto;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+
+  .logoContainer {
+    height: 35px;
+  }
+
+  .menuResponsive {
+    padding: 0 40px;
+  }
+
+  .topBar {
+    padding: 0 25px;
+  }
+
+}
