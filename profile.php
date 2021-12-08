@@ -136,7 +136,7 @@
     </div>
     <?php
       if($user->getIsSubscribed()) {
-        echo "<h3>You are subscribed! Go to PayPal to cancel.</h3>";
+        echo "<h3>You are subscribed.</h3>";
       } else {
         echo "<a href='billing.php'>Subscribe to Flixnet</a>";
       }
