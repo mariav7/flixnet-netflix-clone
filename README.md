@@ -1,4 +1,4 @@
-## Flixnet an Netflix clone using PHP, AJAX, HTML, CSS, MYSQL et JS
+## Flixnet a Netflix clone using PHP, AJAX, HTML, CSS, MYSQL and JS
 [Demo](https://flixnet-clone-app.herokuapp.com/)
 ##  Screen (Login)
 <img src="/assets/screenshots/login.png" width="500" height="300">
