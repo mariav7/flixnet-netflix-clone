@@ -3,10 +3,10 @@
 ##  Screen (Login)
 <img src="/assets/screenshots/login.png" width="500" height="300">
 
-##  Screen (Home)
+##  Screen (Homepage)
 <img src="/assets/screenshots/home.png" width="500" height="300">
 
-##  Screen (Profile)
+##  Screen (Dashboard)
 <img src="/assets/screenshots/dashboard.png" width="500" height="300">
 
 ## ✨ 👉Coded for recreational purposes
