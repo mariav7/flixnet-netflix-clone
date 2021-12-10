@@ -305,6 +305,31 @@ button i {
   color: #e5e5e5;
 }
 
+.footer {
+	max-width: 70%;
+	margin: 1rem auto;
+	overflow: auto;
+}
+
+.footer p,
+.footer a {
+	color: #e5e5e5;
+	font-size: 0.9rem;
+}
+
+.footer a:hover {
+  color: #e6e6e6;
+  font-weight: bold;
+}
+
+.footer p {
+	margin-bottom: 1.5rem;
+}
+
+.footer li {
+	line-height: 1.9;
+}
+
 /************** entity.php **************/
 .errorBanner {
   color: #fff;

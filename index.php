@@ -178,7 +178,7 @@
 	</section>
 
 	<footer class="footer">
-		<p>Questions? Call 1-866-579-7172</p>
+	<p>Questions? Call X-XXX-XXX-XXXX</p>
 		<div class="footer-cols">
 			<ul>
 				<li><a href="#">FAQ</a></li>
@@ -206,6 +206,7 @@
 				<li><a href="#">Legal Notices</a></li>
 			</ul>
 		</div>
+		<p>Personal Project by <a href="https://www.linkedin.com/in/mariafvillegas" target="_blank">Maria Villegas</a></p>
 	</footer>
 	
   <script src="assets/js/main.js"></script>

@@ -10,7 +10,9 @@
   $detailsMessage = "";
   $passwordMessage = "";
   $subscriptionMessage = "";
+  $deleteAccountMessage = "";
 
+  // User details
   if(isset($_POST["saveDetailsButton"])) {
     $account = new Account($con);
 
@@ -33,6 +35,7 @@
     }
   }
 
+  // Update Password
   if(isset($_POST["savePasswordButton"])) {
     $account = new Account($con);
 
@@ -55,6 +58,7 @@
     }
   }
 
+  // Pay Pal subscription
   if(isset($_GET['success']) && $_GET['success'] == 'true') {
     $token = $_GET['token'];
     $agreement = new \PayPal\Api\Agreement();
@@ -88,6 +92,27 @@
     $subscriptionMessage = "<div class='alertError'>
                         User cancelled or something went wrong!
                       </div>";
+  }
+
+  // Delete account
+  if(isset($_POST["deleteAccountButton"])) {
+    $account = new Account($con);
+
+    if($account->deleteAccount($userLoggedIn)) {
+      // If Success
+      $deleteAccountMessage = "<div class='alertSuccess'>
+                          Account deleted!
+                        </div>";
+      unset($_SESSION["userLoggedIn"]);
+      header("Location: index.php");               
+    } else {
+      // If Failure
+      $errorMessage = $account->getFirstError();
+
+      $deleteAccountMessage = "<div class='alertError'>
+                          $errorMessage
+                        </div>";
+    }
   }
 
 ?>
@@ -141,6 +166,21 @@
         echo "<a href='billing.php'>Subscribe to Flixnet</a>";
       }
     ?>
+  </div>
+
+  <div class="formSection">
+    <form method="POST">
+      <h2>Delete account</h2>
+
+      <h3>If you delete your account, your profile will be permanently deleted.</h3>
+
+      <div class="message">
+        <?php echo $deleteAccountMessage; ?>
+      </div>
+
+      <input type="submit" name="deleteAccountButton" value="Delete" onclick="return confirm('Are you sure you want to permanently delete your account?')">
+
+    </form>
   </div>
 
 </div>

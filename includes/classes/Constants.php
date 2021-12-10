@@ -12,6 +12,7 @@
     public static $passwordLength = "Your password must be between 5 and 25 characters";
     public static $loginFailed = "Your username or password was incorrect";
     public static $passwordIncorrect = "Your old password is incorrect";
+    public static $deleteAccountFailed = "Unable to delete account, please contact the Webmaster.";
   }
 
 ?>

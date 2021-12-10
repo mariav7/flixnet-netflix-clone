@@ -206,5 +206,21 @@
         array_push($this->errorArray, Constants::$passwordIncorrect);
       }
     }
+
+    // Delete account and return to index.php
+    public function deleteAccount($un) {
+
+      $query = $this->con->prepare("DELETE FROM users WHERE username=:un");
+
+      $query->bindValue(":un", $un);
+
+      $query->execute();
+
+      if($query->rowCount() !== 1) {
+        array_push($this->errorArray, Constants::$deleteAccountFailed);
+      } else {
+        return true;
+      }
+    }
   }
 ?>
